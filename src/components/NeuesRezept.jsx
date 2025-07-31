@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import defaultImg from 'public/default.png';
 
 const NeuesRezept = ({ setRezepte }) => {
     const navigate = useNavigate();
@@ -7,7 +8,7 @@ const NeuesRezept = ({ setRezepte }) => {
     const [neuesRezept, setNeuesRezept] = useState({
         title: '',
         description: '',
-        image: 'public/default.png',
+        image: defaultImg,
         ingredients: '',
         steps: '',
         category: '',
@@ -37,7 +38,7 @@ const NeuesRezept = ({ setRezepte }) => {
             id: Date.now(),
             title: neuesRezept.title,
             description: neuesRezept.description,
-            image: 'public/default.png',
+            image: defaultImg,
             ingredients: neuesRezept.ingredients.split(',').map(i => i.trim()),
             steps: neuesRezept.steps,
             category: neuesRezept.category,
