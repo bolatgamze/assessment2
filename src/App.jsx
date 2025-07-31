@@ -8,16 +8,16 @@ import NeuesRezept from "./components/NeuesRezept.jsx";
 import About from "./components/About.jsx";
 import { useState } from "react";
 
-import menemen from '/menemen.jpg';
-import pasta from '/pasta.jpg';
-import tiramisu from '/tiramisu.jpg';
-import eclair from '/eclair.jpg';
-import croissant from '/croissant.jpg';
-import karniyarik from '/karniyarik.jpg';
-import padthai from '/padthai.jpg';
-import ratatouille from '/ratatouille.jpg';
-import weisswurst from '/weisswurst.jpg';
-import apfelstrudel from '/apfelstrudel.jpg';
+import menemen from 'public/menemen.jpg';
+import pasta from 'public/pasta.jpg';
+import tiramisu from 'public/tiramisu.jpg';
+import eclair from 'public/eclair.jpg';
+import croissant from 'public/croissant.jpg';
+import karniyarik from 'public/karniyarik.jpg';
+import padthai from 'public/padthai.jpg';
+import ratatouille from 'public/ratatouille.jpg';
+import weisswurst from 'public/weisswurst.jpg';
+import apfelstrudel from 'public/apfelstrudel.jpg';
 
 function App() {
     const [rezepte, setRezepte] = useState([
