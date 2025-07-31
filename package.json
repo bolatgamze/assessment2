@@ -1,17 +1,17 @@
+
 {
   "name": "assessment2",
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://bolatgamze.github.io/assessment2",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "vite build && gh-pages -d dist"
   },
-  "homepage": "https://bolatgamze.github.io/assessment2",
   "dependencies": {
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
