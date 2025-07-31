@@ -4,6 +4,16 @@
   padding: 2rem;
   text-align: center;
 }
+body {
+  background-image: url("public/image/küche.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-attachment: fixed;
+}
+
 
 .logo {
   height: 6em;
