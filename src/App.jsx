@@ -24,11 +24,11 @@ function App() {
                     />
                     <Route
                         path="/rezepte/:id"
-                        element={<RezeptDetail rezepte={rezepte} />}
+                        element={<RezeptDetail rezepte={rezepte} setRezepte={setRezepte} />}
                     />
                     <Route
                         path="/neu"
-                        element={<NeuesRezept rezepte={rezepte} setRezepte={setRezepte} />}
+                        element={<NeuesRezept setRezepte={setRezepte} />}
                     />
                     <Route path="/about" element={<About />} />
                 </Routes>
