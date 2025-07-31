@@ -7,7 +7,7 @@ const NeuesRezept = ({ setRezepte }) => {
     const [neuesRezept, setNeuesRezept] = useState({
         title: '',
         description: '',
-        image: '/image/default.png',
+        image: 'image/default.png',
         ingredients: '',
         steps: '',
         category: '',
@@ -37,7 +37,7 @@ const NeuesRezept = ({ setRezepte }) => {
             id: Date.now(),
             title: neuesRezept.title,
             description: neuesRezept.description,
-            image: '/image/default.png',
+            image: 'image/default.png',
             ingredients: neuesRezept.ingredients.split(',').map(i => i.trim()),
             steps: neuesRezept.steps,
             category: neuesRezept.category,
