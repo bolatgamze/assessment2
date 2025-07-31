@@ -3,7 +3,7 @@ const rezepte = [
         id: 1,
         title: "Menemen",
         description: "Türkisches Frühstück mit Ei, Tomaten und Paprika.",
-        image: "image/Menemen.jpg",
+        image: "image/menemen.jpg",
         ingredients: ["Eier", "Tomaten", "Paprika", "Zwiebeln", "Salz"],
         steps: "Gemüse schneiden, anbraten, Eier hinzufügen und stocken lassen.",
         category: "Frühstück",
