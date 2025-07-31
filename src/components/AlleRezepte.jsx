@@ -1,18 +1,15 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-function AlleRezepte({ rezepte, setRezepte }) {
+function AlleRezepte({ rezepte }) {
     const [selectedCategory, setSelectedCategory] = useState("Alle");
     const [selectedCuisine, setSelectedCuisine] = useState("Alle");
     const [searchTitle, setSearchTitle] = useState("");
 
+    const navigate = useNavigate();
+
     const kategorien = ["Alle", "Frühstück", "Hauptgericht", "Dessert"];
     const küchen = ["Alle", "Türkisch", "Italienisch", "Französisch", "Deutsch", "Thailändisch"];
-
-    const handleDelete = (id) => {
-        if (window.confirm("Bist du sicher?")) {
-            setRezepte(prev => prev.filter(r => r.id !== id));
-        }
-    };
 
     const gefilterteRezepte = rezepte.filter((r) => {
         const kategorieMatch = selectedCategory === "Alle" || r.category === selectedCategory;
@@ -23,7 +20,6 @@ function AlleRezepte({ rezepte, setRezepte }) {
 
     return (
         <div style={{ padding: '20px' }}>
-
             <input
                 type="text"
                 placeholder="Rezept suchen..."
@@ -55,43 +51,33 @@ function AlleRezepte({ rezepte, setRezepte }) {
                 gap: "20px"
             }}>
                 {gefilterteRezepte.map((rezept) => (
-                    <div key={rezept.id} style={{
-                        width: "300px",
-                        border: "1px solid #ccc",
-                        borderRadius: "10px",
-                        padding: "15px",
-                        boxShadow: "0 2px 5px rgba(0,0,0,0.1)",
-                        backgroundColor: "#fff"
-                    }}>
+                    <div
+                        key={rezept.id}
+                        onClick={() => navigate(`/rezepte/${rezept.id}`)}
+                        style={{
+                            width: "300px",
+                            border: "1px solid #ccc",
+                            borderRadius: "10px",
+                            padding: "15px",
+                            boxShadow: "0 2px 5px rgba(0,0,0,0.1)",
+                            backgroundColor: "#fff",
+                            cursor: "pointer",
+                            transition: "transform 0.2s ease",
+                        }}
+                        onMouseEnter={(e) => e.currentTarget.style.transform = "scale(1.02)"}
+                        onMouseLeave={(e) => e.currentTarget.style.transform = "scale(1)"}
+                    >
                         <img src={rezept.image} alt={rezept.title}
                              style={{ width: "100%", borderRadius: "10px", objectFit: "cover", height: "200px" }} />
                         <h3>{rezept.title}</h3>
                         <p>{rezept.description}</p>
                         <p><strong>Kategorie:</strong> {rezept.category}</p>
                         <p><strong>Küche:</strong> {rezept.cuisine}</p>
-
-                        <div style={{ display: "flex", justifyContent: "space-between", marginTop: "10px" }}>
-                            <button style={buttonStyle}>Details</button>
-                            <button style={buttonStyle}>Bearbeiten</button>
-                            <button onClick={() => handleDelete(rezept.id)} style={{ ...buttonStyle, backgroundColor: "#c0392b" }}>
-                                Löschen
-                            </button>
-                        </div>
                     </div>
                 ))}
             </div>
         </div>
     );
 }
-
-const buttonStyle = {
-    backgroundColor: "#637a43",
-    color: "white",
-    border: "none",
-    padding: "6px 12px",
-    borderRadius: "5px",
-    textDecoration: "none",
-    cursor: "pointer"
-};
 
 export default AlleRezepte;
