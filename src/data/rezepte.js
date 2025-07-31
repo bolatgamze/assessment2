@@ -7,7 +7,8 @@ const rezepte = [
         ingredients: ["Eier", "Tomaten", "Paprika", "Zwiebeln", "Salz"],
         steps: "Gemüse schneiden, anbraten, Eier hinzufügen und stocken lassen.",
         category: "Frühstück",
-        cuisine: "Türkisch"
+        cuisine: "Türkisch",
+        rating: 0,
     },
     {
         id: 2,
@@ -17,7 +18,8 @@ const rezepte = [
         ingredients: ["Spaghetti", "Speck", "Eier", "Parmesan", "Pfeffer"],
         steps: "Pasta kochen, Speck anbraten, mit Eiermasse mischen.",
         category: "Hauptgericht",
-        cuisine: "Italienisch"
+        cuisine: "Italienisch",
+        rating: 0,
     },
     {
         id: 3,
@@ -27,7 +29,8 @@ const rezepte = [
         ingredients: ["Mascarpone", "Kaffee", "Löffelbiskuit", "Eier", "Kakao"],
         steps: "Löffelbiskuit in Kaffee tunken, schichten, kühlen.",
         category: "Dessert",
-        cuisine: "Italienisch"
+        cuisine: "Italienisch",
+        rating: 2,
     },
     {
         id: 4,
@@ -37,7 +40,8 @@ const rezepte = [
         ingredients: ["Brandteig", "Vanillecreme", "Schokolade"],
         steps: "Brandteig backen, füllen, mit Schokolade glasieren.",
         category: "Dessert",
-        cuisine: "Französisch"
+        cuisine: "Französisch",
+        rating: 0,
     },
     {
         id: 5,
@@ -47,7 +51,8 @@ const rezepte = [
         ingredients: ["Mehl", "Butter", "Hefe", "Milch", "Zucker"],
         steps: "Teig mehrmals tourieren, backen.",
         category: "Frühstück",
-        cuisine: "Französisch"
+        cuisine: "Französisch",
+        rating: 0,
     },
     {
         id: 6,
@@ -57,7 +62,8 @@ const rezepte = [
         ingredients: ["Auberginen", "Hackfleisch", "Tomaten", "Zwiebeln", "Petersilie"],
         steps: "Auberginen frittieren, füllen, im Ofen backen.",
         category: "Hauptgericht",
-        cuisine: "Türkisch"
+        cuisine: "Türkisch",
+        rating: 3
     },
     {
         id: 7,
@@ -67,7 +73,8 @@ const rezepte = [
         ingredients: ["Reisnudeln", "Eier", "Sojasprossen", "Tofu", "Erdnüsse"],
         steps: "Nudeln einweichen, braten, Zutaten vermengen.",
         category: "Hauptgericht",
-        cuisine: "Thailändisch"
+        cuisine: "Thailändisch",
+        rating: 1,
     },
     {
         id: 8,
@@ -77,7 +84,8 @@ const rezepte = [
         ingredients: ["Zucchini", "Paprika", "Aubergine", "Tomaten", "Kräuter"],
         steps: "Gemüse schneiden, schichten, langsam schmoren.",
         category: "Hauptgericht",
-        cuisine: "Französisch"
+        cuisine: "Französisch",
+        rating: 1,
     },
     {
         id: 9,
@@ -87,7 +95,8 @@ const rezepte = [
         ingredients: ["Weißwurst", "Brezel", "Süßer Senf"],
         steps: "Wurst im Wasserbad erhitzen, mit Brezel servieren.",
         category: "Frühstück",
-        cuisine: "Deutsch"
+        cuisine: "Deutsch",
+        rating: 0,
     },
     {
         id: 10,
@@ -97,7 +106,8 @@ const rezepte = [
         ingredients: ["Äpfel", "Zimt", "Blätterteig", "Zucker", "Rosinen"],
         steps: "Füllen, rollen, backen, mit Puderzucker servieren.",
         category: "Dessert",
-        cuisine: "Deutsch"
+        cuisine: "Deutsch",
+        rating: 0,
     }
 ];
 

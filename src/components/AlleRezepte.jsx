@@ -1,7 +1,7 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import {useState} from "react";
+import {useNavigate} from "react-router-dom";
 
-function AlleRezepte({ rezepte }) {
+function AlleRezepte({rezepte, setRezepte}) {
     const [selectedCategory, setSelectedCategory] = useState("Alle");
     const [selectedCuisine, setSelectedCuisine] = useState("Alle");
     const [searchTitle, setSearchTitle] = useState("");
@@ -17,18 +17,25 @@ function AlleRezepte({ rezepte }) {
         const titelMatch = r.title.toLowerCase().includes(searchTitle.toLowerCase());
         return kategorieMatch && kücheMatch && titelMatch;
     });
+    const handleRatingClick = (id, newRating) => {
+        setRezepte(prev =>
+            prev.map(r =>
+                r.id === id ? {...r, rating: newRating} : r
+            )
+        );
+    };
 
     return (
-        <div style={{ padding: '20px' }}>
+        <div style={{padding: '20px'}}>
             <input
                 type="text"
                 placeholder="Rezept suchen..."
                 value={searchTitle}
                 onChange={(e) => setSearchTitle(e.target.value)}
-                style={{ padding: '5px', marginBottom: '20px', width: '100%' }}
+                style={{padding: '5px', marginBottom: '20px', width: '100%'}}
             />
 
-            <div style={{ display: "flex", gap: "20px", marginBottom: "20px", alignItems: "center", color: "white" }}>
+            <div style={{display: "flex", gap: "20px", marginBottom: "20px", alignItems: "center", color: "white"}}>
                 <label htmlFor="kategorie">Nach Mahlzeit filtern:</label>
                 <select id="kategorie" value={selectedCategory} onChange={(e) => setSelectedCategory(e.target.value)}>
                     {kategorien.map((k) => (
@@ -68,11 +75,31 @@ function AlleRezepte({ rezepte }) {
                         onMouseLeave={(e) => e.currentTarget.style.transform = "scale(1)"}
                     >
                         <img src={rezept.image} alt={rezept.title}
-                             style={{ width: "100%", borderRadius: "10px", objectFit: "cover", height: "200px" }} />
+                             style={{width: "100%", borderRadius: "10px", objectFit: "cover", height: "200px"}}/>
                         <h3>{rezept.title}</h3>
                         <p>{rezept.description}</p>
                         <p><strong>Kategorie:</strong> {rezept.category}</p>
                         <p><strong>Küche:</strong> {rezept.cuisine}</p>
+                        <p>
+                           <span onClick={(e) => {
+                               e.stopPropagation();
+                               handleRatingClick(rezept.id, 1);
+                           }}>
+                               {rezept.rating >= 1 ? "⭐" : "☆"}
+                           </span>
+                            <span onClick={(e) => {
+                                e.stopPropagation();
+                                handleRatingClick(rezept.id, 2);
+                            }}>
+                                {rezept.rating >= 2 ? "⭐" : "☆"}
+                            </span>
+                            <span onClick={(e) => {
+                                e.stopPropagation();
+                                handleRatingClick(rezept.id, 3);
+                            }}>
+                                {rezept.rating >= 3 ? "⭐" : "☆"}
+                            </span>
+                        </p>
                     </div>
                 ))}
             </div>
